@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "svendeproeve-backend", "svendeproeve-backend\svendeproeve-backend.csproj", "{18B141DA-B37C-4C98-98C3-825B82521190}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18B141DA-B37C-4C98-98C3-825B82521190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18B141DA-B37C-4C98-98C3-825B82521190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18B141DA-B37C-4C98-98C3-825B82521190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18B141DA-B37C-4C98-98C3-825B82521190}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC6FAF6A-FD1A-45C4-B083-797097D31A13}
+	EndGlobalSection
+EndGlobal

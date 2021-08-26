@@ -17,8 +17,20 @@ namespace svendeproeve_backend.Data
 
         }
 
-        public DbSet<Product> themes { get; set; }
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<category> Categories { get; set; }
+
+        public DbSet<Brand> Brands { get; set; }
 
         public DbSet<AppRefreshToken> AppRefreshTokens { get; set; }
+    
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Brand>().HasMany(i => i.Products);
+            builder.Entity<Product>().HasMany(i => i.Brands);
+            base.OnModelCreating(builder);
+        }
+
     }
 }

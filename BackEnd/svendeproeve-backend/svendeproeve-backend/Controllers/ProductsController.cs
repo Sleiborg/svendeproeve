@@ -14,7 +14,7 @@ using Mapster;
 
 namespace svendeproeve_backend.Controllers
 {
-    [Route("api/[product]")]
+    [Route("api/product")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
@@ -39,7 +39,7 @@ namespace svendeproeve_backend.Controllers
         public IActionResult index()
         {
             var products = databasedcontext.Products;
-            return Ok(products); 
+            return Ok(products);
         }
 
         [HttpPost("create")]

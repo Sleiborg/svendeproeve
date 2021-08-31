@@ -60,14 +60,14 @@ namespace svendeproeve_backend.Controllers
         /// Login for user.
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> SignIn([FromForm] UserSignIndDto dto)
+        public async Task<IActionResult> SignIn([FromBody] UserSignIndDto dto)
         {
             // Check for is all data is set.
             if (!ModelState.IsValid)
                 return StatusCode(400, "Email or passwordd is missing!");
 
             // Make new instanze of appuser.
-            AppUser appUser = await userManager.FindByIdAsync(dto.Email).ConfigureAwait(false);
+            AppUser appUser = await userManager.FindByEmailAsync(dto.Email).ConfigureAwait(false);
 
             if (appUser is null)
                 return BadRequest("User not exsists");

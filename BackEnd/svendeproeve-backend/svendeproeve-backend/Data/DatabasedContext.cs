@@ -31,6 +31,5 @@ namespace svendeproeve_backend.Data
             builder.Entity<Product>().HasMany(i => i.Brands);
             base.OnModelCreating(builder);
         }
-
     }
 }

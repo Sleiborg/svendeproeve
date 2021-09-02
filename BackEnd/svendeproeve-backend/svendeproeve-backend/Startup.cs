@@ -67,7 +67,7 @@ namespace svendeproeve_backend
 
             services.AddCors(option => option.AddPolicy("AllowAll", builder =>
             {
-                builder.WithOrigins("https://*", "http://")
+                builder.WithOrigins("https://*", "http://*")
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials()

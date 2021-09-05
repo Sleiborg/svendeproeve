@@ -5,7 +5,7 @@ $('#login').submit(function(e){
 
     $.ajax({
         type:'POST',
-        url:'https://localhost:44373/api/Identity/signin',
+        url:'http://localhost:5000/api/Identity/signin',
         contentType:'application/json',
         data: JSON.stringify({email: email, password:password}),
         dataType:'JSON',

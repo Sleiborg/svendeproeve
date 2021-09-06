@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
             <div class="product-details">
                 <div class="product-title">${data.title}</div>
                 <div class="product-description">${data.descriptions}</div>
-                <img src"/img/No_Foto.png" alt="product thumb">
+                <img src"/Image/No_Foto.png" alt="product thumb">
             </div>
 
             <div class="product-delete">

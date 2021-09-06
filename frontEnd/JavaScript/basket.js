@@ -11,9 +11,9 @@ function setbasket(data){
 function getBasket(){
     return localStorage[basketname]
 }
-
+ 
 //Get all products from basket 
-function getItem(){
+function getItems() {
     var json_basket = getBasket()
     let basket
     if(json_basket){

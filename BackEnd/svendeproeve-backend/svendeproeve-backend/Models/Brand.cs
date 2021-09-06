@@ -13,8 +13,8 @@ namespace svendeproeve_backend.Models
 
         public string BrandName { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
+        //public virtual ICollection<Product> Products { get; set; }
 
-        //public virtual ICollection<ProductBrandCollection> ProductBrandCollections { get; set; }
+        public virtual ICollection<ProductBrandCollection> ProductBrandCollections { get; set; }
     }
 }

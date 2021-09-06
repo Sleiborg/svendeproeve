@@ -21,9 +21,9 @@ namespace svendeproeve_backend.Models
         public int CategoryID { get; set; }
         public virtual category Category { get; set; }
 
-        public virtual ICollection<Brand> Brands { get; set; }
-        
-        //public virtual ICollection<ProductBrandCollection> ProductBrandCollections { get; set; }
-        
+        //public virtual ICollection<Brand> Brands { get; set; }
+
+        public virtual ICollection<ProductBrandCollection> ProductBrandCollections { get; set; }
+
     }
 }

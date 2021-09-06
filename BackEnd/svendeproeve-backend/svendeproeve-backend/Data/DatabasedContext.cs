@@ -22,13 +22,20 @@ namespace svendeproeve_backend.Data
         public DbSet<category> Categories { get; set; }
 
         public DbSet<Brand> Brands { get; set; }
+        
+        public DbSet<ProductBrandCollection> ProductBrandCollections { get; set; }
 
         public DbSet<AppRefreshToken> AppRefreshTokens { get; set; }
     
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Brand>().HasMany(i => i.Products);
-            builder.Entity<Product>().HasMany(i => i.Brands);
+            //builder.Entity<Brand>().HasMany(i => i.Products);
+            //builder.Entity<Product>().HasMany(i => i.Brands);
+
+            builder.Entity<ProductBrandCollection>().HasOne(i => i.Product).WithMany(i => i.ProductBrandCollections).HasForeignKey(i => i.productId);
+            builder.Entity<ProductBrandCollection>().HasOne(i => i.Brand).WithMany(i => i.ProductBrandCollections).HasForeignKey(i => i.BrandId);
+            builder.Entity<ProductBrandCollection>().HasKey(i => new { i.productId, i.BrandId });
+
             base.OnModelCreating(builder);
         }
     }

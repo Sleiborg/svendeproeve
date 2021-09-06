@@ -1,4 +1,3 @@
-
 var conStr = "localhost:5000";
 const connection = new signalR.HubConnectionBuilder()
     .withUrl("http://" + conStr + "/products")
@@ -13,7 +12,7 @@ const connection = new signalR.HubConnectionBuilder()
             <div class="product-title">${product.title}</div>
             <div class="product-description">${product.descriptions}</div>
             <div class="product-price">${product.price}</div>
-            <img class="img-size" src="/img/No_Foto.png" alt="product thumb">
+            <img class="img-size" src="/Image/No_Foto.png" alt="product thumb">
             </div>
 
             <button class="add" >Tilføj</button>
@@ -52,7 +51,7 @@ start();
 function getProducts(func){
     // API GET
     const productsElm = document.querySelector('.products');
-    alert('Test')
+    //alert('Test')
     $.ajax({
         url:"http://" + conStr + "/api/product",
         type: "Get",
@@ -68,13 +67,13 @@ function getProducts(func){
                     <div class="product-title">${element.title}</div>
                     <div class="product-description">${element.descriptions}</div>
                     <div class="product-price">${element.price}</div>
-                    <img class="img-size" src="/img/No_Foto.png" alt="product thumb">
+                    <img class="img-size" src="/Image/No_Foto.png" alt="product thumb">
                 </div>
 
                     <button class="add" >Tilføj</button>
                     <button class="remove" >Fjern fra kurv</button>
 
-                    <div class="product-delete">
+                    <div class="product-delete issignin">
                         <i class="material-icons delete-product" data-id="${element.productId}">delete_outline</i>
                     </div>
                 </div>
@@ -97,7 +96,7 @@ function getProducts(func){
                      success: function(data){
                          //alert(data.title);
                      },error:function(xhr){
-                         console.error("Fejl")
+                         console.error("Fejl");
                      }
                  })
                  e.preventDefault();
@@ -111,7 +110,7 @@ function getProducts(func){
                      type:"Delete",
                      contentType:'application/json',
                      success: function(){
-                        console.log("Test");
+                        //console.log("Test");
                         $(`.product[data-id='${id}']`).remove()
                      }, error: function(xhr){
                         console.error("bla bla bla")

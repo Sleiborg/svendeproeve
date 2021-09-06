@@ -15,7 +15,7 @@ var base64image = '';
         video = document.getElementById('video');
         canvas = document.getElementById('canvas');
         photo = document.getElementById('photo');
-        startbutton = document.getElementById('startbutton')
+        startbutton = document.getElementById('startbuttom')
 
         navigator.mediaDevices.getUserMedia({video: true, audio: false})
         .then(function(stream){
@@ -43,13 +43,15 @@ var base64image = '';
         }, false);
 
         startbutton.addEventListener('click', function(ev){
-            takepicture();
-            
+            takepicture();   
             ev.preventDefault();
         },false);
 
         clearphoto();
     }
+
+      // Fill the photo with an indication that none has been
+    // captured.
 
     function clearphoto(){
         var context = canvas.getContext('2d');

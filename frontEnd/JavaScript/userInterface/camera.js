@@ -47,7 +47,7 @@ var base64image = '';
             ev.preventDefault();
         },false);
 
-        clearphoto();
+        //clearphoto();
     }
 
       // Fill the photo with an indication that none has been

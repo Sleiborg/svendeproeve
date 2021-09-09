@@ -1,28 +1,30 @@
 var conStr = "localhost:5000";
+var dynImage = "/media/images/";
+
+
 const connection = new signalR.HubConnectionBuilder()
     .withUrl("http://" + conStr + "/products")
-    // .withUrl(absolutePath("http://" + conStr + "/productsHub"))
     .configureLogging(signalR.LogLevel.Information)
-    .build()
+    .build();
 
     connection.on("ReceiveProducts", function (product){
+
         const html = `
         <div class="card-panel product white row" data-id="${product.productId}">
             <div class="product-details">
             <div class="product-title">${product.title}</div>
             <div class="product-description">${product.descriptions}</div>
             <div class="product-price">${product.price}</div>
-            <img class="img-size" src="/Image/No_Foto.png" alt="product thumb">
+            <img class="img-size"alt="product thumb" ${product.image}>
             </div>
-
+  
             <button class="add" >Tilføj</button>
 
             <div class="product-delete">
                 <i class="material-icons delete-product" data-id="${product.productId}">delete_outline</i>
             </div>
-        </div>
-        `
-        $(".products").append(html)
+        </div>`
+        $(".products").append(html)  
     })
 
 
@@ -67,7 +69,7 @@ function getProducts(func){
                     <div class="product-title">${element.title}</div>
                     <div class="product-description">${element.descriptions}</div>
                     <div class="product-price">${element.price}</div>
-                    <img class="img-size" src="/Image/No_Foto.png" alt="product thumb">
+                    <img class="img-size" src="http://${conStr + dynImage}${element.image}" alt="product thumb">
                 </div>
 
                     <button class="add" >Tilføj</button>
@@ -110,10 +112,10 @@ function getProducts(func){
                      type:"Delete",
                      contentType:'application/json',
                      success: function(){
-                        //console.log("Test");
+                        console.log("Slettet");
                         $(`.product[data-id='${id}']`).remove()
                      }, error: function(xhr){
-                        console.error("bla bla bla")
+                        console.error("bla bla bla");
                      }
                  })
              })

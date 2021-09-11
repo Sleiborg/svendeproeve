@@ -1,7 +1,6 @@
 var conStr = "localhost:5000";
 var dynImage = "/media/images/";
 
-
 const connection = new signalR.HubConnectionBuilder()
     .withUrl("http://" + conStr + "/products")
     .configureLogging(signalR.LogLevel.Information)
@@ -20,13 +19,12 @@ const connection = new signalR.HubConnectionBuilder()
   
             <button class="add" >Tilføj</button>
 
-            <div class="product-delete">
+            <div class="product-delete issignin">
                 <i class="material-icons delete-product" data-id="${product.productId}">delete_outline</i>
             </div>
         </div>`
         $(".products").append(html)  
     })
-
 
     function absolutePath(href)
     // var absolutePath = function(href) 
@@ -50,6 +48,7 @@ connection.onclose(start);
 // Start the connection.
 start();
 
+
 function getProducts(func){
     // API GET
     const productsElm = document.querySelector('.products');
@@ -62,7 +61,6 @@ function getProducts(func){
         success: function(data){
             for(let index = 0; index < data.length; index++){
                 const element = data[index];
-
                 const html = `
                 <div class="card-panel product white row" data-id="${element.productId}">
                     <div class="product-details">
@@ -123,3 +121,5 @@ function getProducts(func){
         }
     })
 }
+
+

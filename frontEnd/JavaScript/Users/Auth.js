@@ -1,17 +1,14 @@
 function checkAuth(){
         var token = getCookie("access_token")
 
-    var isSigninELM = document.querySelector(".issignin")
+    var isSigninELMs = document.querySelectorAll(".issignin")
+    for(i = 0; i < isSigninELMs.length; i++){
 
-    // if(!token){
-    //     window.location.href = "/HTML/Index.html"
-    // }
-
-    
-
-    isSigninELM.style.visibility = "hidden"
+        if(!token){
+            isSigninELMs[i].style.visibility = "hidden"
+        }    
+    }
 }
-
 checkAuth()
 
 

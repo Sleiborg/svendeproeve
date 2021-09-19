@@ -1,8 +1,8 @@
-const staticCacheName = 'site-static-v3';
-const dynamicCacheName = 'site-static-v3';
+const staticCacheName = 'site-static-v7';
+const dynamicCacheName = 'site-static-v7';
+
 const assets = [
-    '/',
-    '/LoginPage.HTML',
+    '/LoginPage.html',
     '/JavaScript/app.js',
     '/JavaScript/userInterface/Ui.js',
     '/JavaScript/db.js',
@@ -14,6 +14,7 @@ const assets = [
     'https://fonts.gstatic.com/s/materialicons/v70/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2',
     '/HTML/fallback.html'
 ];
+
 
 //cache size limit function
 const limitCacheSize = (name, size) => {
@@ -53,7 +54,7 @@ self.addEventListener('activate', evt =>{
 
 //fetch event
 self.addEventListener('fetch', evt =>{
-    //console.log('fetch event', evt)
+    console.log('fetch event', evt)
     evt.respondWith(
         caches.match(evt .request).then(cacheRes =>{
             return cacheRes || fetch(evt.request).then(fetchRes => {
